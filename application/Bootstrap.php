@@ -10,11 +10,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
     public function _initLayout()
     {
+        /*
         Zend_Layout::startMvc(array(
             'layout'     => 'index',
             'layoutPath' => APPLICATION_PATH . '/layouts/scripts/',
             'contentKey' => 'content',
         ));
+        */
+
+        $resource = $this->getPluginResource('layout');
+        Zend_Layout::startMvc($resource->getLayout());
     }
 }
 
